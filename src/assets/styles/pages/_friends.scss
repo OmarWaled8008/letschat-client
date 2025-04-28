@@ -1,0 +1,40 @@
+.containerfriends {
+  display: flex;
+  gap: 20px;
+  padding: 0px 40px;
+}
+.main-content-friends {
+  width: 100%;
+}
+.follow-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  & button {
+    padding: 8px 16px;
+    border: none;
+    background-color: var(--bg);
+    color: var(--text-w);
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+    &.active {
+      background-color: var(--primary);
+      color: var(--text-d);
+    }
+  }
+}
+.follow-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  & > div {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+    & > div {
+      grid-column: span 4;
+    }
+  }
+}

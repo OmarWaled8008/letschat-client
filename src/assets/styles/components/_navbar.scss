@@ -1,0 +1,117 @@
+%topnav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  padding: 1rem 2rem; 
+  background-color: var(--bg);
+  position: relative; 
+  .top-left {
+    @extend %topnav;
+    justify-content: flex-start;
+    gap: 1rem;
+
+    .logo {
+      width: 50px;
+    }
+    .top-search {
+      background-color: var(--com);
+      color: var(--text-w);
+      border: none;
+      padding: 0.5rem 0.9rem;
+      border-radius: 10px;
+      width: 180px;
+    }
+  }
+
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    color: var(--text-w);
+    cursor: pointer;
+  }
+
+  .top-middle {
+    @extend %topnav;
+    justify-content: space-evenly;
+    .top-icon {
+      font-size: 20px;
+      color: var(--text-w);
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        color: var(--primary);
+      }
+    }
+  }
+
+  .top-right {
+    @extend %topnav;
+    justify-content: flex-end;
+    gap: 1rem;
+    .avatar {
+      width: 45px;
+      border-radius: 10px;
+    }
+  }
+
+  .vue-router-active-exact {
+    color: var(--primary) !important;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30%;
+      height: 4px;
+      background-color: var(--primary);
+      border-radius: 2px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+
+    .top-left {
+      .top-search {
+        width: 120px;
+      }
+    }
+
+    .top-middle {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: var(--bg);
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      display: none;
+      z-index: 100;
+    }
+
+    .top-right {
+      .avatar {
+        width: 40px;
+      }
+    }
+
+    .hamburger {
+      display: block;
+    }
+
+    .top-middle.show {
+      display: flex;
+    }
+  }
+}

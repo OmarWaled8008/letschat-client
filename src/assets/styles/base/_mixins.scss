@@ -1,0 +1,41 @@
+@mixin buttonModeMixin {
+  background-color: var(--primary);
+  color: var(--text-d);
+  border: none;
+  cursor: pointer;
+}
+@mixin containerAuth {
+  display: flex;
+  min-height: 100vh;
+}
+@mixin authSectionMixin {
+  flex: 1;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg);
+  color: var(--text-w);
+}
+
+@mixin buttonSys($bg: var(--primary), $color: var(--text-d)) {
+  padding: 12px 30px;
+  background: $bg;
+  color: $color;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  text-decoration: none;
+  text-align: center;
+}
+@mixin msg($bg, $color) {
+  background: $bg;
+  color: $color;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

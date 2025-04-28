@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #{$primary-dark};
+    --bg: #{$bg-dark};
+    --com: #{$com-dark};
+    --text-d: #{$text-dark-d};
+    --text-w: #{$text-dark-w};
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary: #{$primary-light};
+    --bg: #{$bg-light};
+    --com: #{$com-light};
+    --text-w: #{$text-light-w};
+    --text-d: #{$text-light-d};
+  }
+}
+.dark-theme {
+  --primary: #{$primary-dark};
+  --bg: #{$bg-dark};
+  --com: #{$com-dark};
+  --text-d: #{$text-dark-d};
+  --text-w: #{$text-dark-w};
+}
+.light-theme {
+  --primary: #{$primary-light};
+  --bg: #{$bg-light};
+  --com: #{$com-light};
+  --text-w: #{$text-light-w};
+  --text-d: #{$text-light-d};
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
+}
