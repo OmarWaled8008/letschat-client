@@ -75,14 +75,10 @@ async function handleSubmit() {
     errorMessage.style.display = "none";
     errorMessage.innerHTML = "";
     try {
-      let { data } = await axios.post(
-        `${apiUrl}/auth/login`,
-        {
-          user: email.value,
-          password: password.value,
-        },
-        { withCredentials: true }
-      );
+      let { data } = await axios.post(`${apiUrl}/auth/login`, {
+        user: email.value,
+        password: password.value,
+      });
       console.log(data);
       Cookies.set("token", data.token, { expires: 1 });
       toast(`${data.message}`, {
