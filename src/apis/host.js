@@ -1,2 +1,2 @@
-const apiHost = "http://localhost:8080/api";
+const apiHost = "https://letschat-server-production.up.railway.app/api";
 export default apiHost;
