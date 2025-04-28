@@ -83,6 +83,7 @@ async function handleSubmit() {
         },
         { withCredentials: true }
       );
+      console.log(data);
       Cookies.set("token", data.token, { expires: 1 });
       toast(`${data.message}`, {
         autoClose: 2000,
