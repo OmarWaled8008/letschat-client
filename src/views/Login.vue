@@ -58,6 +58,9 @@ import { toast } from "vue3-toastify";
 import axios from "axios";
 import apiUrl from "../apis/host";
 import { useRouter } from "vue-router";
+import Cookies from "js-cookie";
+import { jwtDecode } from "jwt-decode";
+
 const email = ref("");
 const password = ref("");
 const router = useRouter();
@@ -80,6 +83,7 @@ async function handleSubmit() {
         },
         { withCredentials: true }
       );
+      Cookies.set("token", data.token, { expires: 1 });
       toast(`${data.message}`, {
         autoClose: 2000,
         type: "success",
