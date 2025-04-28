@@ -161,10 +161,8 @@ This project is open-source and available for free under the [MIT License](LICEN
 
 ## 👤 Author
 
-- **Your Name**
-- [Your LinkedIn](https://www.linkedin.com/)
-- [Your GitHub](https://github.com/)
-
+- **Omar Waled**
+- [Your LinkedIn](https://www.linkedin.com/in/omar-waled/)
 ---
 
 _Thank you for checking out this project!_ ✨
