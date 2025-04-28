@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     proxy: {
-      "/upload": "http://localhost:8080",
+      "/upload": "https://letschat-server-production.up.railway.app",
     },
   },
 });
