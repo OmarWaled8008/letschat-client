@@ -15,7 +15,7 @@
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --primary: red;
+    --primary: #0002fd;
     --bg: #e5e5e5;
     --com: #d7d7d7;
     --text-w: #050505;
@@ -31,7 +31,7 @@
 }
 
 .light-theme {
-  --primary: red;
+  --primary: #0002fd;
   --bg: #e5e5e5;
   --com: #d7d7d7;
   --text-w: #050505;
