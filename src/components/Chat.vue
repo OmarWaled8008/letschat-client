@@ -56,7 +56,7 @@ const messageText = ref("");
 const onlineUsers = ref([]);
 const chatBody = ref(null);
 
-onMounted(() => {
+onMounted(async () => {
   if (currUser) {
     socket.emit("join", { userId: currUser });
   }
@@ -72,10 +72,10 @@ onMounted(() => {
       scrollToBottom();
     });
   }
-  // scrollToBottom();
+
+  scrollToBottom();
 
   getMessages(chatId.value).then(async () => {
-    await nextTick();
     scrollToBottom();
   });
 });
@@ -108,7 +108,6 @@ watch(
   (newChatId) => {
     chatId.value = newChatId;
     getMessages(chatId.value).then(async () => {
-      await nextTick();
       scrollToBottom();
     });
   }
