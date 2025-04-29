@@ -47,7 +47,7 @@ import { jwtDecode } from "jwt-decode";
 
 const currUser = jwtDecode(Cookies.get("token")).userId;
 const route = useRoute();
-const chatId = ref(route.params.chatId); // make it ref so you can update easily
+const chatId = ref(route.params.chatId);
 const chatStore = useChatStore();
 const { getMessages } = chatStore;
 const { messages } = storeToRefs(chatStore);
@@ -66,15 +66,16 @@ onMounted(() => {
   });
 
   if (!socket.hasListeners("getMessage")) {
-    socket.on("getMessage", (data) => {
-      console.log("Received new message:", data);
-      scrollToBottom();
+    socket.on("getMessage", async (data) => {
       messages.value.push(data);
+      await nextTick();
+      scrollToBottom();
     });
   }
-  scrollToBottom();
+  // scrollToBottom();
 
-  getMessages(chatId.value).then(() => {
+  getMessages(chatId.value).then(async () => {
+    await nextTick();
     scrollToBottom();
   });
 });
@@ -85,13 +86,15 @@ const sendMessage = async () => {
     senderId: currUser,
     text: messageText.value,
   });
-  scrollToBottom();
+
   messages.value.push({
     senderId: { _id: currUser },
     text: messageText.value,
   });
 
   messageText.value = "";
+  await nextTick();
+  scrollToBottom();
 };
 
 const scrollToBottom = () => {
@@ -104,7 +107,8 @@ watch(
   () => route.params.chatId,
   (newChatId) => {
     chatId.value = newChatId;
-    getMessages(chatId.value).then(() => {
+    getMessages(chatId.value).then(async () => {
+      await nextTick();
       scrollToBottom();
     });
   }
