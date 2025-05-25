@@ -149,7 +149,6 @@ And adjust your `apiUrl` import accordingly.
 - [ ] Proper handling of Socket.IO disconnect/reconnect.
 - [ ] Upload optimization for large images.
 - [ ] Better error handling for Axios requests.
-- [ ] Multi-language support.
 
 ---
 
